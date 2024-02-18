@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Navbar from "../Shared/Navbar/Navbar";
-import { Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import { IoIosArrowDown } from "react-icons/io";
 import Footer from "../Shared/Footer/Footer";
 import Container from "../Shared/Container/Container";
@@ -112,21 +112,35 @@ const Layout = () => {
             </div>
           </div>
           <div className="flex flex-col gap-2 mt-12 ">
+            <Link to={'/statics'}>
             <h2 className="px-3 text-lg font-medium border-b pb-3 border-fourth flex items-center duration-200 transition-all hover:gap-4 gap-2">
               Statistics <FaArrowRight />
             </h2>
+            </Link>
+            <Link to={'/moneyCollection'}>
             <h2 className="px-3 mt-2 text-lg font-medium border-b pb-3 border-fourth flex items-center duration-200 transition-all hover:gap-4 gap-2">
               Money recieve <FaArrowRight />
             </h2>
-            <h2 className="px-3 mt-2 text-lg font-medium border-b pb-3 border-fourth flex items-center duration-200 transition-all hover:gap-4 gap-2">
+            </Link>
+ 
+      <Link to={'/mealList'}>
+             <h2 className="px-3 mt-2 text-lg font-medium border-b pb-3 border-fourth flex items-center duration-200 transition-all hover:gap-4 gap-2">
               Meal list <FaArrowRight />
             </h2>
-            <h2 className="px-3 mt-2 text-lg font-medium border-b pb-3 border-fourth flex items-center duration-200 transition-all hover:gap-4 gap-2">
+          </Link>
+
+
+             <Link to={'/addMealDay'}>
+             <h2 className="px-3 mt-2 text-lg font-medium border-b pb-3 border-fourth flex items-center duration-200 transition-all hover:gap-4 gap-2">
               Add Meal Day <FaArrowRight />
             </h2>
-            <h2 className="px-3 mt-2 text-lg font-medium border-b pb-3 border-fourth flex items-center duration-200 transition-all hover:gap-4 gap-2">
+             </Link>
+               <Link to={'/allMembers'}>
+               <h2 className="px-3 mt-2 text-lg font-medium border-b pb-3 border-fourth flex items-center duration-200 transition-all hover:gap-4 gap-2">
               All Members <FaArrowRight />
             </h2>
+               </Link>
+
           </div>
         </div>
           </div>
@@ -204,21 +218,35 @@ const Layout = () => {
             </div>
           </div>
           <div className="flex flex-col gap-2 mt-12 ">
+            <Link to={'/statics'}>
             <h2 className="px-3 text-lg font-medium border-b pb-3 border-fourth flex items-center duration-200 transition-all hover:gap-4 gap-2">
               Statistics <FaArrowRight />
             </h2>
+            </Link>
+            <Link to={'/moneyCollection'}>
             <h2 className="px-3 mt-2 text-lg font-medium border-b pb-3 border-fourth flex items-center duration-200 transition-all hover:gap-4 gap-2">
               Money recieve <FaArrowRight />
             </h2>
-            <h2 className="px-3 mt-2 text-lg font-medium border-b pb-3 border-fourth flex items-center duration-200 transition-all hover:gap-4 gap-2">
+            </Link>
+ 
+      <Link to={'/mealList'}>
+             <h2 className="px-3 mt-2 text-lg font-medium border-b pb-3 border-fourth flex items-center duration-200 transition-all hover:gap-4 gap-2">
               Meal list <FaArrowRight />
             </h2>
-            <h2 className="px-3 mt-2 text-lg font-medium border-b pb-3 border-fourth flex items-center duration-200 transition-all hover:gap-4 gap-2">
+          </Link>
+
+
+             <Link to={'/addMealDay'}>
+             <h2 className="px-3 mt-2 text-lg font-medium border-b pb-3 border-fourth flex items-center duration-200 transition-all hover:gap-4 gap-2">
               Add Meal Day <FaArrowRight />
             </h2>
-            <h2 className="px-3 mt-2 text-lg font-medium border-b pb-3 border-fourth flex items-center duration-200 transition-all hover:gap-4 gap-2">
+             </Link>
+               <Link to={'/allMembers'}>
+               <h2 className="px-3 mt-2 text-lg font-medium border-b pb-3 border-fourth flex items-center duration-200 transition-all hover:gap-4 gap-2">
               All Members <FaArrowRight />
             </h2>
+               </Link>
+
           </div>
         </div>
       </Drawer>

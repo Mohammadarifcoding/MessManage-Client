@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 import Layout from './Components/Layout/Layout';
 import Home from './Components/Pages/Home/Home';
+import Statics from './Components/Pages/Statics/Statics';
 
 
 const router = createBrowserRouter([
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
       {
         path:'/',
         element:<Home></Home>
+      },
+      {
+        path:'/statics',
+        element:<Statics></Statics>
       }
     ]
   },
