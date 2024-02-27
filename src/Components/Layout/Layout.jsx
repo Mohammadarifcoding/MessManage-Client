@@ -1,16 +1,47 @@
 import { useState } from "react";
 import { Link, Outlet } from "react-router-dom";
 import { IoIosArrowDown } from "react-icons/io";
-import { FaRegChartBar } from "react-icons/fa";
+import { FaCalendarDay, FaRegChartBar } from "react-icons/fa";
 import Container from "../Shared/Container/Container";
 import Drawer from "react-modern-drawer";
 import "react-modern-drawer/dist/index.css";
 import { FaArrowRight } from "react-icons/fa6";
+import { FaMoneyBillTransfer } from "react-icons/fa6";
+import { MdChecklistRtl } from "react-icons/md";
+import { FaClipboardUser } from "react-icons/fa6";
 const Layout = () => {
   const [isOpen, setIsOpen] = useState(false);
   const toggleDrawer = () => {
     setIsOpen((prevState) => !prevState);
   };
+
+  const url = [
+    {
+      baseUrl: "/statics",
+      UrlName: "Statistics",
+      icon: <FaRegChartBar />,
+    },
+    {
+      baseUrl: "/moneyCollection",
+      UrlName: "Money recieve",
+      icon: <FaMoneyBillTransfer />,
+    },
+    {
+      baseUrl: "/mealList",
+      UrlName: "Meal list",
+      icon: <MdChecklistRtl />,
+    },
+    {
+      baseUrl: "/addMealDay",
+      UrlName: "Add Meal Day",
+      icon: <FaCalendarDay />,
+    },
+    {
+      baseUrl: "/allMembers",
+      UrlName: "All Members",
+      icon: <FaClipboardUser />,
+    },
+  ];
   return (
     <div className="container mx-auto max-w-[1600px]">
       <div className="bg-primary w-full xl:hidden block">
@@ -106,38 +137,21 @@ const Layout = () => {
               </div>
             </div>
             <div className="flex flex-col gap-2 mt-12 ">
-              <Link to={"/statics"}>
-                <h2 className="px-3 text-lg font-medium border-b pb-3 justify-between flex items-center duration-200 transition-all hover:gap-4 gap-2">
-                  <span className="flex gap-2 items-center">
-                    <FaRegChartBar /> Statistics
-                  </span>{" "}
-                  <span className="p-2 bg-[#E6F2FF] text-[#007AFF] rounded-full">
-                    <FaArrowRight />
-                  </span>
-                </h2>
-              </Link>
-              <Link to={"/moneyCollection"}>
-                <h2 className="px-3 mt-2 text-lg font-medium border-b pb-3  flex items-center duration-200 transition-all hover:gap-4 gap-2">
-                  Money recieve <FaArrowRight />
-                </h2>
-              </Link>
-
-              <Link to={"/mealList"}>
-                <h2 className="px-3 mt-2 text-lg font-medium border-b pb-3  flex items-center duration-200 transition-all hover:gap-4 gap-2">
-                  Meal list <FaArrowRight />
-                </h2>
-              </Link>
-
-              <Link to={"/addMealDay"}>
-                <h2 className="px-3 mt-2 text-lg font-medium border-b pb-3  flex items-center duration-200 transition-all hover:gap-4 gap-2">
-                  Add Meal Day <FaArrowRight />
-                </h2>
-              </Link>
-              <Link to={"/allMembers"}>
-                <h2 className="px-3 mt-2 text-lg font-medium border-b pb-3  flex items-center duration-200 transition-all hover:gap-4 gap-2">
-                  All Members <FaArrowRight />
-                </h2>
-              </Link>
+              {url.map((item) => (
+                <Link key={item.UrlName} to={item.baseUrl}>
+                  <h2 className="px-3 text-lg font-medium border-b pb-3 group flex  items-center duration-200 transition-all hover:gap-4 gap-2">
+                    <span className="flex gap-2 items-center font-semibold">
+                      <span className="text-[#007AFF] font-bold">
+                        {item.icon}
+                      </span>{" "}
+                      {item.UrlName}
+                    </span>{" "}
+                    <span className="p-2 bg-[#E6F2FF] text-[#007AFF] ml-auto duration-500 transition-all mr-6 group-hover:mr-0 rounded-full">
+                      <FaArrowRight />
+                    </span>
+                  </h2>
+                </Link>
+              ))}
             </div>
           </div>
         </div>
@@ -212,33 +226,21 @@ const Layout = () => {
             </div>
           </div>
           <div className="flex flex-col gap-2 mt-12 ">
-            <Link to={"/statics"}>
-              <h2 className="px-3 text-lg font-medium border-b pb-3  flex items-center duration-200 transition-all hover:gap-4 gap-2">
-                Statistics <FaArrowRight />
-              </h2>
-            </Link>
-            <Link to={"/moneyCollection"}>
-              <h2 className="px-3 mt-2 text-lg font-medium border-b pb-3  flex items-center duration-200 transition-all hover:gap-4 gap-2">
-                Money recieve <FaArrowRight />
-              </h2>
-            </Link>
-
-            <Link to={"/mealList"}>
-              <h2 className="px-3 mt-2 text-lg font-medium border-b pb-3  flex items-center duration-200 transition-all hover:gap-4 gap-2">
-                Meal list <FaArrowRight />
-              </h2>
-            </Link>
-
-            <Link to={"/addMealDay"}>
-              <h2 className="px-3 mt-2 text-lg font-medium border-b pb-3  flex items-center duration-200 transition-all hover:gap-4 gap-2">
-                Add Meal Day <FaArrowRight />
-              </h2>
-            </Link>
-            <Link to={"/allMembers"}>
-              <h2 className="px-3 mt-2 text-lg font-medium border-b pb-3  flex items-center duration-200 transition-all hover:gap-4 gap-2">
-                All Members <FaArrowRight />
-              </h2>
-            </Link>
+          {url.map((item) => (
+                <Link key={item.UrlName} to={item.baseUrl}>
+                  <h2 className="px-3 text-lg font-medium border-b pb-3 group flex  items-center duration-200 transition-all hover:gap-4 gap-2">
+                    <span className="flex gap-2 items-center font-semibold">
+                      <span className="text-[#007AFF] font-bold">
+                        {item.icon}
+                      </span>{" "}
+                      {item.UrlName}
+                    </span>{" "}
+                    <span className="p-2 bg-[#E6F2FF] text-[#007AFF] ml-auto duration-500 transition-all mr-6 group-hover:mr-0 rounded-full">
+                      <FaArrowRight />
+                    </span>
+                  </h2>
+                </Link>
+              ))}
           </div>
         </div>
       </Drawer>
