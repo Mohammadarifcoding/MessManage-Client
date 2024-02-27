@@ -80,9 +80,9 @@ const Layout = () => {
       </div>
 
       <div className="flex ">
-        <div className="xl:w-[20%] h-full min-h-screen bg-primary w-0">
-          <div className="bg-primary h-full w-full text-fourth py-3">
-            <div className="flex justify-center items-center pt-5">
+        <div className="xl:w-[20%] h-full min-h-screen bg-primary w-0 ">
+          <div className="bg-primary h-full w-full text-fourth py-3 ">
+            <div className="flex justify-center border-b  mx-8  items-center pt-5 pb-10 ">
               <div className="relative group">
                 <img
                   className="w-[50px] h-[50px] bg-slate-500 object-cover rounded-full"
@@ -139,10 +139,10 @@ const Layout = () => {
                 </span>
               </div>
             </div>
-            <div className="flex flex-col gap-2 mt-12 ">
+            <div className="flex flex-col gap-3 mt-12 mx-3">
               {url.map((item) => (
                 <Link key={item.UrlName} to={item.baseUrl}>
-                  <h2 className="px-3 text-lg font-medium border-b pb-3 group flex  items-center duration-200 transition-all hover:gap-4 gap-2">
+                  <h2 className="px-3 text-lg font-medium  pb-3 group flex  items-center duration-200 transition-all hover:gap-4 gap-2">
                     <span className="flex gap-2 items-center font-semibold">
                       <span className="text-[#007AFF] font-bold">
                         {item.icon}
@@ -171,8 +171,8 @@ const Layout = () => {
         className=""
       >
         <div className="bg-primary h-full w-full text-fourth py-3">
-          <div className="flex justify-center items-center pt-5">
-            <div className="relative group">
+          <div className="flex justify-center items-center border-b pb-10 mx-8 pt-5">
+            <div className="relative group ">
               <img
                 className="w-[50px] h-[50px] bg-slate-500 object-cover rounded-full"
                 src="https://source.unsplash.com/300x300/?profile"
@@ -228,10 +228,10 @@ const Layout = () => {
               </span>
             </div>
           </div>
-          <div className="flex flex-col gap-2 mt-12 ">
+          <div className="flex flex-col gap-3 mt-12 px-1">
             {url.map((item) => (
               <Link key={item.UrlName} to={item.baseUrl}>
-                <h2 className="px-3 text-lg font-medium border-b pb-3 group flex  items-center duration-200 transition-all hover:gap-4 gap-2">
+                <h2 className="px-3 text-lg font-medium  pb-3 group flex  items-center duration-200 transition-all hover:gap-4 gap-2">
                   <span className="flex gap-2 items-center font-semibold">
                     <span className="text-[#007AFF] font-bold">
                       {item.icon}
