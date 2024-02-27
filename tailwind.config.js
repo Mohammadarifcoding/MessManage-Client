@@ -9,6 +9,8 @@ export default {
         secondary: "#393E46",
         third: "#00ADB5",
         fourth: "#141515",
+        themeFirstColor:'#007AFF',
+        themeSecondColor:'#F2F2F7'
       },
     },
   },

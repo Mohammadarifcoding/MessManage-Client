@@ -9,6 +9,7 @@ import { FaArrowRight } from "react-icons/fa6";
 import { FaMoneyBillTransfer } from "react-icons/fa6";
 import { MdChecklistRtl } from "react-icons/md";
 import { FaClipboardUser } from "react-icons/fa6";
+import { MdOutlineManageAccounts } from "react-icons/md";
 const Layout = () => {
   const [isOpen, setIsOpen] = useState(false);
   const toggleDrawer = () => {
@@ -50,25 +51,27 @@ const Layout = () => {
           <div className=" flex justify-between  items-center ">
             {/* Navbar */}
             <div className=" px-3 py-4  text-fourth">
-              <div className="flex gap-3 items-center">
-                <img className="w-[40px]" src="/MassManageLogo.png" alt="" />
-                <h2 className="text-xl">MassManage</h2>
+              <div className="flex gap-2 items-center">
+                <div className="text-[30px] text-[#007AFF]">
+                  <MdOutlineManageAccounts />
+                </div>
+                <h2 className="sm:text-xl text-lg font-bold">MassManage</h2>
               </div>
             </div>
             <div
               onClick={toggleDrawer}
-              className="  h-full flex items-center gap-2 hover:bg-secondary p-2 rounded-3xl"
+              className="  h-full flex items-center sm:gap-2 gap-1 hover:bg-themeSecondColor p-2 rounded-3xl"
             >
               <div className="relative group">
                 <img
-                  className="w-[50px] h-[50px] bg-slate-500 object-cover rounded-full"
+                  className="sm:w-[50px] w-[35px] sm:h-[50px] h-[35px] bg-slate-500 object-cover rounded-full"
                   src="https://source.unsplash.com/300x300/?profile"
                   alt=""
                 />
                 <span className="h-4 w-4 bg-green-500 absolute rounded-full bottom-2 right-0 border-[3px] border-white"></span>
                 <span className="h-4 w-4 bg-green-500 absolute rounded-full bottom-2 right-0 animate-ping"></span>
               </div>
-              <div className="text-[18px] text-white">
+              <div className="sm:text-[18px] text-themeFirstColor">
                 <IoIosArrowDown />
               </div>
             </div>
@@ -77,9 +80,9 @@ const Layout = () => {
       </div>
 
       <div className="flex ">
-        <div className="xl:w-[20%] h-full min-h-screen bg-primary w-0">
-          <div className="bg-primary h-full w-full text-fourth py-3">
-            <div className="flex justify-center items-center pt-5">
+        <div className="xl:w-[20%] h-full min-h-screen bg-primary w-0 ">
+          <div className="bg-primary h-full w-full text-fourth py-3 ">
+            <div className="flex justify-center border-b  mx-8  items-center pt-5 pb-10 ">
               <div className="relative group">
                 <img
                   className="w-[50px] h-[50px] bg-slate-500 object-cover rounded-full"
@@ -136,10 +139,10 @@ const Layout = () => {
                 </span>
               </div>
             </div>
-            <div className="flex flex-col gap-2 mt-12 ">
+            <div className="flex flex-col gap-3 mt-12 mx-3">
               {url.map((item) => (
                 <Link key={item.UrlName} to={item.baseUrl}>
-                  <h2 className="px-3 text-lg font-medium border-b pb-3 group flex  items-center duration-200 transition-all hover:gap-4 gap-2">
+                  <h2 className="px-3 text-lg font-medium  pb-3 group flex  items-center duration-200 transition-all hover:gap-4 gap-2">
                     <span className="flex gap-2 items-center font-semibold">
                       <span className="text-[#007AFF] font-bold">
                         {item.icon}
@@ -168,8 +171,8 @@ const Layout = () => {
         className=""
       >
         <div className="bg-primary h-full w-full text-fourth py-3">
-          <div className="flex justify-center items-center pt-5">
-            <div className="relative group">
+          <div className="flex justify-center items-center border-b pb-10 mx-8 pt-5">
+            <div className="relative group ">
               <img
                 className="w-[50px] h-[50px] bg-slate-500 object-cover rounded-full"
                 src="https://source.unsplash.com/300x300/?profile"
@@ -225,22 +228,22 @@ const Layout = () => {
               </span>
             </div>
           </div>
-          <div className="flex flex-col gap-2 mt-12 ">
-          {url.map((item) => (
-                <Link key={item.UrlName} to={item.baseUrl}>
-                  <h2 className="px-3 text-lg font-medium border-b pb-3 group flex  items-center duration-200 transition-all hover:gap-4 gap-2">
-                    <span className="flex gap-2 items-center font-semibold">
-                      <span className="text-[#007AFF] font-bold">
-                        {item.icon}
-                      </span>{" "}
-                      {item.UrlName}
+          <div className="flex flex-col gap-3 mt-12 px-1">
+            {url.map((item) => (
+              <Link key={item.UrlName} to={item.baseUrl}>
+                <h2 className="px-3 text-lg font-medium  pb-3 group flex  items-center duration-200 transition-all hover:gap-4 gap-2">
+                  <span className="flex gap-2 items-center font-semibold">
+                    <span className="text-[#007AFF] font-bold">
+                      {item.icon}
                     </span>{" "}
-                    <span className="p-2 bg-[#E6F2FF] text-[#007AFF] ml-auto duration-500 transition-all mr-6 group-hover:mr-0 rounded-full">
-                      <FaArrowRight />
-                    </span>
-                  </h2>
-                </Link>
-              ))}
+                    {item.UrlName}
+                  </span>{" "}
+                  <span className="p-2 bg-[#E6F2FF] text-[#007AFF] ml-auto duration-500 transition-all mr-6 group-hover:mr-0 rounded-full">
+                    <FaArrowRight />
+                  </span>
+                </h2>
+              </Link>
+            ))}
           </div>
         </div>
       </Drawer>
