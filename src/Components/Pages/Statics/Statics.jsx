@@ -1,5 +1,4 @@
-import React from "react";
-import { FaRegListAlt } from "react-icons/fa";
+
 import LineChart from "./LineChart/LineChart";
 
 const Statics = () => {
