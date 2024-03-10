@@ -9,6 +9,7 @@ import {
 import Layout from './Components/Layout/Layout';
 import Home from './Components/Pages/Home/Home';
 import Statics from './Components/Pages/Statics/Statics';
+import AllMembers from './Components/Pages/AllMembers/AllMembers';
 
 
 const router = createBrowserRouter([
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
       {
         path:'/statics',
         element:<Statics></Statics>
+      },
+      {
+        path:'/allMembers',
+        element:<AllMembers></AllMembers>
       }
     ]
   },
