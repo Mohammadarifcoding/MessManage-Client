@@ -10,6 +10,7 @@ export default {
         third: "#00ADB5",
         fourth: "#141515",
         themeFirstColor:'#007AFF',
+        themelittleFirstColor:'#E6F2FF',
         themeSecondColor:'#F2F2F7'
       },
     },
